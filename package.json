@@ -10,6 +10,7 @@
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.1.5",
+    "@material-ui/core": "^4.11.3",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "feather-icons": "^4.28.0",
@@ -17,8 +18,10 @@
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3"
+    "twin.macro": "^2.2.3",
+    "use-in-view": "^1.0.15"
   }
 }

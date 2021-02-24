@@ -1,65 +1,183 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React, { useContext } from "react";
+// import "tailwindcss/dist/base.css";
+// import "../styles/globalStyles.css";
+// import tw from "twin.macro";
+// import { css } from "styled-components/macro"; //eslint-disable-line
+// import AnimationRevealPage from "../src/helpers/AnimationRevealPage.js";
+// import Hero from "../src/components/hero/TwoColumnWithVideo.js";
+// import MainFeature from "../src/components/features/TwoColWithButton.js";
+// import MainFeature2 from "../src/components/features/TwoColSingleFeatureWithStats2.js";
+// import Testimonial from "../src/components/testimonials/ThreeColumnWithProfileImage.js";
+// import Footer from "../src/components/footers/FiveColumnDark.js";
+// import PopupModal from "../src/components/Modal/PopupModal";
+import SEO from "../src/components/SEO/SEO";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+// export const query = graphql`
+// 	query MyQuery {
+// 		smithing: file(relativePath: { eq: "smithing.jpg" }) {
+// 			childImageSharp {
+// 				fluid(maxWidth: 640, maxHeight: 425, quality: 100) {
+// 					...GatsbyImageSharpFluid_withWebp
+// 				}
+// 			}
+// 		}
+// 		handgun: file(relativePath: { eq: "handgun.jpg" }) {
+// 			childImageSharp {
+// 				fluid(maxWidth: 640, maxHeight: 425, quality: 100) {
+// 					...GatsbyImageSharpFluid_withWebp
+// 				}
+// 			}
+// 		}
+// 		gunrack: file(relativePath: { eq: "gunrack.jpg" }) {
+// 			childImageSharp {
+// 				fluid(maxWidth: 640, maxHeight: 425, quality: 100) {
+// 					...GatsbyImageSharpFluid_withWebp
+// 				}
+// 			}
+// 		}
+// 	}
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+export async function getStaticProps(context) {
+	return {
+		props: {}, // will be passed to the page component as props
+	};
 }
+// `;
+export default ({ data = {} }) => {
+	// const Subheading = tw.span`tracking-wider text-sm font-medium text-blue-900`;
+	// const HighlightedText = tw.span`text-blue-700 inline-block`;
+	// const Description = tw.span`inline-block mt-8`;
+	// const imageCss = tw`rounded-4xl`;
+
+	// const isBrowser = typeof window !== "undefined";
+	// let modalSubmitted;
+	// if (isBrowser) {
+	// 	modalSubmitted = JSON.parse(sessionStorage.getItem("modalSubmitted"));
+	// } else {
+	// 	modalSubmitted = false;
+	// }
+
+	return (
+		<div>
+			<h1>Hello</h1>
+			{/* <AnimationRevealPage> */}
+
+			<SEO />
+		</div>
+	);
+	{
+		/* <Hero
+				heading={
+					<>
+						Professional gunsmithing for
+						<wbr /> <HighlightedText>over 75 years.</HighlightedText>
+					</>
+				}
+				description=""
+				// imageSrc="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
+				imageSrc={data.smithing.childImageSharp.fluid}
+				imageCss={imageCss}
+				imageDecoratorBlob={true}
+				primaryButtonText="Shipping"
+				primaryButtonUrl="/product/shipping-box"
+			/> */
+	}
+	{
+		/* {modalSubmitted !== true ? <PopupModal /> : null} */
+	}
+
+	{
+		/* <MainFeature
+				subheading={<Subheading>Established In 1945</Subheading>}
+				heading={
+					<>
+						Serving Customers
+						<HighlightedText>Nationwide</HighlightedText>
+					</>
+				}
+				description={
+					<Description>
+						You don't need to be a local - you can shop with us no matter where
+						you live, and rest easy knowing our secure shipping box will protect
+						your firearm in transit.
+					</Description>
+				}
+				textOnLeft={false}
+				primaryButtonText="Latest Offers"
+				primaryButtonUrl="/shop"
+				imageSrc={data.handgun.childImageSharp.fluid}
+				imageCss={imageCss}
+				imageDecoratorBlob={false}
+				imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-32 md:h-32 opacity-25`}
+			/> */
+	}
+	{
+		/* <TabGrid
+        heading={
+          <>
+            Latest <HighlightedText> products</HighlightedText>
+          </>
+        }
+      /> */
+	}
+	{
+		/* <Features
+        heading={
+          <>
+            Amazing <HighlightedText>Services.</HighlightedText>
+          </>
+        }
+        imageContainerCss={tw`p-2!`}
+        imageCss={tw`w-20! h-20!`}
+      /> */
+	}
+	{
+		/* <MainFeature2
+				subheading={<Subheading>A Reputed Brand</Subheading>}
+				description="Our highly trained gunsmiths have the expertise to restore your firearm to the maximum standard.  Satisfaction guaranteed!"
+				heading={
+					<>
+						Standard of <HighlightedText>Excellence</HighlightedText>
+					</>
+				}
+				statistics={[
+					{
+						key: "Orders",
+						value: "94000+",
+					},
+					{
+						key: "Customers",
+						value: "11000+",
+					},
+					{
+						key: "Repairs",
+						value: "1500+",
+					},
+				]}
+				primaryButtonText="Order Now"
+				primaryButtonUrl="/shop"
+				imageInsideDiv={false}
+				// imageSrc="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNzI2fQ&auto=format&fit=crop&w=768&q=80"
+				imageSrc={data.gunrack.childImageSharp.fluid}
+				imageCss={Object.assign(tw`bg-cover`, imageCss)}
+				imageContainerCss={tw`md:w-1/2 h-auto`}
+				imageDecoratorBlob={false}
+				imageDecoratorBlobCss={tw`left-1/2 md:w-32 md:h-32 -translate-x-1/2 opacity-25`}
+				textOnLeft={true}
+			/> */
+	}
+	{
+		/* 
+			<Testimonial
+				subheading=""
+				heading={
+					<>
+						Customers <HighlightedText>Love Us</HighlightedText>
+					</>
+				}
+			/>
+
+			<Footer /> */
+	}
+	// </AnimationRevealPage>
+};
